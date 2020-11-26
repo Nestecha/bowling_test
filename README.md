@@ -1,4 +1,4 @@
-# PHPUnit Starter
+# Bowling Test
 
 ## Prerequisite
 
@@ -38,35 +38,24 @@ Run testing settings in phpunit.xml configuration
 vendor/bin/phpunit
 ```
 
-## Basic PHP Test File
+## Bowling Rules
 
-1. Class with `Test` for naming convention.
-2. Test Class MUST extends `PHPUnit\Framework\TestCase`
-3. Method name starts with `test` or with annotation `/** @test */`
-4. Name file with suffix `Test.php`.
+- The goal is to knock down all ten pins
+- Each frame consists of throwing the ball twice to knock down all the pins
+- If you knock down all the pins with the first ball, it is called a "strike"
+- If you knock down all the pins with the second ball, it is called a "spare"
+- Each games consists of ten frames. If you bowl a strike in the tenth frame, you get
+two more balls. If you throw a spare, you get one more ball.
+- Open frames are frames without a strike or spare
+- Scoring is based on the number of pins you knock down. However, if you bowl a
+spare, you get to add the pins in your next ball to that frame. For strikes, you get
+the next two balls.
+- The maximum score is 300.
 
-Example: `ExampleTest.php`
+### Examples
 
-```php
-<?php
-
-use PHPUnit\Framework\TestCase;
-
-class ExampleTest extends TestCase
-{
-    /** @test */
-    public function test_feature()
-    {
-        // arrange
-        
-        // act
-        
-        // assert
-
-    }
-}
-```
-
-- PHPUnit Assertions (https://phpunit.de/manual/current/en/appendixes.assertions.html)
-- PHPUnit Configration (http://phpunit.readthedocs.io/en/7.1/configuration.html)
-- Visit [PHPUnit Manual](https://phpunit.de/manual/current/en/) for more information.
+- Throws are 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 / 1 - 1 : Score is 20 (10 throws).
+- Throws are 5 - 5 / 1 - 1 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 : Score is 13 (10 throws).
+- Throws are 10 / 1 - 1 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 : Score is 14 (10 throws).
+- Throws are 0 - 5 / 5 - 1 / 1 - 1 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 / 0 - 0 : Score is 13 (10 throws).
+- Throws are 10 / 10 / 10 / 10 / 10 / 10 / 10 / 10 / 10 / 10 / 10 / 10 : Score is 300 (12 throws).
