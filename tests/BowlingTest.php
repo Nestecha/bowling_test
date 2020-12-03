@@ -5,20 +5,16 @@ use PHPUnit\Framework\TestCase;
 
 class BowlingTest extends TestCase
 {
-    // Write your tests here
-
     /** @test */
-    function it_scores_a_perfect_game()
+    public function it_scores_zero_when_it_rolls_zero_pin()
     {
-        $this->markTestSkipped("This test shows the expected API to be implemented by the Bowling class. Enable it when code is ready.");
-
         $game = new Bowling();
 
-        foreach (range(1, 12) as $roll) {
-            $game->roll(10);
+        foreach (range(1, 10) as $roll) {
+            $game->roll(0);
         }
 
-        $this->assertSame(300, $game->score());
+        $this->assertSame(0, $game->score());
     }
 
     /** @test */

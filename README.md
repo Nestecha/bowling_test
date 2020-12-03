@@ -38,6 +38,19 @@ Run testing settings in phpunit.xml configuration
 vendor/bin/phpunit
 ```
 
+## Constraints
+
+A class `Bowling` is required. It must adhere to this interface :
+
+```php
+interface Bowling
+{
+    public function roll(int $pins): void;
+
+    public function score(): int;
+}
+```
+
 ## Bowling Rules
 
 - The goal is to knock down all ten pins
