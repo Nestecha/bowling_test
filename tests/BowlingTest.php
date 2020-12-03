@@ -10,7 +10,7 @@ class BowlingTest extends TestCase
     {
         $game = new Bowling();
 
-        foreach (range(1, 10) as $roll) {
+        foreach (range(1, 20) as $roll) {
             $game->roll(0);
         }
 
